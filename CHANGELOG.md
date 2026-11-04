@@ -113,10 +113,10 @@ All notable user-facing changes are documented here. The format follows
   `ssh`, `user_host`, `prompt_char`, `nix_shell`, `aws`, and Rust, Node, Bun,
   Deno, and Python version segments.
 
-[Unreleased]: https://github.com/ixxq-labs/nova/compare/v0.4.0...HEAD
-[0.4.0]: https://github.com/ixxq-labs/nova/compare/v0.3.1...v0.4.0
-[0.3.1]: https://github.com/ixxq-labs/nova/compare/v0.3.0...v0.3.1
-[0.3.0]: https://github.com/ixxq-labs/nova/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/ixxq-labs/nova/compare/v0.1.1...v0.2.0
-[0.1.1]: https://github.com/ixxq-labs/nova/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/ixxq-labs/nova/releases/tag/v0.1.0
+[Unreleased]: https://github.com/unmett/nova/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/unmett/nova/compare/v0.3.1...v0.4.0
+[0.3.1]: https://github.com/unmett/nova/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/unmett/nova/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/unmett/nova/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/unmett/nova/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/unmett/nova/releases/tag/v0.1.0

@@ -46,13 +46,13 @@ command は初回 GitHub Release の publish 後に使えます。
 ### Shell Installer
 
 ```sh
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/ixxq-labs/nova/releases/latest/download/nova-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/unmett/nova/releases/latest/download/nova-installer.sh | sh
 ```
 
 ### Homebrew
 
 ```sh
-brew install ixxq-labs/tap/nova
+brew install unmett/tap/nova
 ```
 
 ### Nix
@@ -60,13 +60,13 @@ brew install ixxq-labs/tap/nova
 install せずに実行:
 
 ```sh
-nix run github:ixxq-labs/nova -- --help
+nix run github:unmett/nova -- --help
 ```
 
 profile に install:
 
 ```sh
-nix profile install github:ixxq-labs/nova
+nix profile install github:unmett/nova
 ```
 
 ### mise
@@ -74,7 +74,7 @@ nix profile install github:ixxq-labs/nova
 GitHub backend を使います:
 
 ```sh
-mise use -g github:ixxq-labs/nova@latest
+mise use -g github:unmett/nova@latest
 ```
 
 `ubi` backend は mise 側で deprecated warning が出るため、Nova では案内しま
@@ -128,7 +128,7 @@ NOVA_CONFIG=/path/to/config.toml
 nova_config="${XDG_CONFIG_HOME:-$HOME/.config}/nova/config.toml"
 mkdir -p "$(dirname "$nova_config")"
 curl --proto '=https' --tlsv1.2 -fsSL \
-  https://raw.githubusercontent.com/ixxq-labs/nova/main/examples/config.toml \
+  https://raw.githubusercontent.com/unmett/nova/main/examples/config.toml \
   -o "$nova_config"
 nova check --config "$nova_config"
 ```
