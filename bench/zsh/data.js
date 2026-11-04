@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793439600497,
-  "repoUrl": "https://github.com/ixxq-labs/nova",
+  "lastUpdate": 1793813644874,
+  "repoUrl": "https://github.com/unmett/nova",
   "entries": {
     "Zsh Interactive Latency": [
       {
@@ -1888,6 +1888,65 @@ window.BENCHMARK_DATA = {
             "range": "0.22 ms",
             "unit": "ms",
             "extra": "median: 12.31 ms\nmin: 12.15 ms\nmax: 13.01 ms\nstddev: 0.22 ms\nruns: 16"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "83203852+unmett@users.noreply.github.com",
+            "name": "k.suzuki",
+            "username": "unmett"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8601cdcee5520935bafb0c6fb5218055554bd275",
+          "message": "chore: move the repository and Homebrew tap to unmett (#76)\n\nThe unmett-labs organization is being retired, so Nova now lives at\nunmett/nova and publishes its formula to unmett/homebrew-tap.\n\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-11-05T02:33:08+09:00",
+          "tree_id": "6447cae4ff0ccc1555edbeb76029b17376fbe97f",
+          "url": "https://github.com/unmett/nova/commit/8601cdcee5520935bafb0c6fb5218055554bd275"
+        },
+        "date": 1793813643734,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "first prompt lag",
+            "value": 24.13,
+            "range": "3.44 ms",
+            "unit": "ms",
+            "extra": "median: 24.13 ms\nmin: 19.73 ms\nmax: 35.77 ms\nstddev: 3.44 ms\nruns: 16"
+          },
+          {
+            "name": "first command lag",
+            "value": 24.32,
+            "range": "3.46 ms",
+            "unit": "ms",
+            "extra": "median: 24.32 ms\nmin: 19.89 ms\nmax: 36.01 ms\nstddev: 3.46 ms\nruns: 16"
+          },
+          {
+            "name": "command lag",
+            "value": 0.52,
+            "range": "0.07 ms",
+            "unit": "ms",
+            "extra": "median: 0.52 ms\nmin: 0.4 ms\nmax: 0.67 ms\nstddev: 0.07 ms\nruns: 16"
+          },
+          {
+            "name": "input lag",
+            "value": 0.55,
+            "range": "0.2 ms",
+            "unit": "ms",
+            "extra": "median: 0.55 ms\nmin: 0.15 ms\nmax: 0.75 ms\nstddev: 0.2 ms\nruns: 16"
+          },
+          {
+            "name": "exit time",
+            "value": 12.48,
+            "range": "1.95 ms",
+            "unit": "ms",
+            "extra": "median: 12.48 ms\nmin: 11.79 ms\nmax: 20.44 ms\nstddev: 1.95 ms\nruns: 16"
           }
         ]
       }
