@@ -14,7 +14,7 @@ Cargo can also install Nova directly from source when you intentionally want a
 development build:
 
 ```sh
-cargo install --git https://github.com/ixxq-labs/nova
+cargo install --git https://github.com/unmett/nova
 ```
 
 ## Checks
@@ -81,12 +81,12 @@ new version and date and adds its compare link.
 The release workflow publishes:
 
 - shell installer: `nova-installer.sh`
-- Homebrew formula: `ixxq-labs/homebrew-tap`
+- Homebrew formula: `unmett/homebrew-tap`
 - macOS and Linux archives for x86_64 and aarch64
 - source archive and checksums
 
 Before the first release, maintainers must create the
-`ixxq-labs/homebrew-tap` repository and add a `HOMEBREW_TAP_TOKEN` repository
+`unmett/homebrew-tap` repository and add a `HOMEBREW_TAP_TOKEN` repository
 secret with write access to that tap.
 
 Regenerate the release workflow after cargo-dist configuration changes, then pin

@@ -43,13 +43,13 @@ work after the first GitHub Release is published.
 ### Shell Installer
 
 ```sh
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/ixxq-labs/nova/releases/latest/download/nova-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/unmett/nova/releases/latest/download/nova-installer.sh | sh
 ```
 
 ### Homebrew
 
 ```sh
-brew install ixxq-labs/tap/nova
+brew install unmett/tap/nova
 ```
 
 ### Nix
@@ -57,13 +57,13 @@ brew install ixxq-labs/tap/nova
 Run without installing:
 
 ```sh
-nix run github:ixxq-labs/nova -- --help
+nix run github:unmett/nova -- --help
 ```
 
 Install into your profile:
 
 ```sh
-nix profile install github:ixxq-labs/nova
+nix profile install github:unmett/nova
 ```
 
 ### mise
@@ -71,7 +71,7 @@ nix profile install github:ixxq-labs/nova
 Use the GitHub backend:
 
 ```sh
-mise use -g github:ixxq-labs/nova@latest
+mise use -g github:unmett/nova@latest
 ```
 
 Nova does not document the `ubi` backend because mise warns that it is
@@ -125,7 +125,7 @@ Start from the complete example:
 nova_config="${XDG_CONFIG_HOME:-$HOME/.config}/nova/config.toml"
 mkdir -p "$(dirname "$nova_config")"
 curl --proto '=https' --tlsv1.2 -fsSL \
-  https://raw.githubusercontent.com/ixxq-labs/nova/main/examples/config.toml \
+  https://raw.githubusercontent.com/unmett/nova/main/examples/config.toml \
   -o "$nova_config"
 nova check --config "$nova_config"
 ```
