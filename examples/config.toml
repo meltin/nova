@@ -79,7 +79,9 @@ left = [
   "aws",
   "duration",
 ]
-right = ["time"]
+# A right block on line 1 makes the line as wide as the terminal, so terminals
+# that reflow text can leave stale copies of it when the window shrinks.
+right = []
 
 [layout.line2]
 left = [
@@ -88,7 +90,8 @@ left = [
   "exit_status",
   "prompt_char",
 ]
-right = []
+# The input line's right block is zsh's native RPROMPT.
+right = ["time"]
 
 # Use user_host instead of ssh when you want local prompts to always show
 # user@host. Example:

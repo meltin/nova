@@ -19,8 +19,7 @@ as it arrives. You can type the moment the prompt appears.
   forks nothing, and the worker begins collecting for your directory while the
   rest of `.zshrc` runs, so the first prompt usually arrives complete.
 - **Optional transient prompt.** Accepted lines can collapse to a few segments,
-  such as the directory and `❯`, keeping scrollback dense. Two-line layout with
-  a right-aligned block that survives pane splits and window resizes.
+  such as the directory and `❯`, keeping scrollback dense.
 - **Custom segments.** Turn any command into an async segment with a few lines
   of TOML.
 - **Terminal integration.** OSC 133 prompt marks (jump between prompts in
@@ -184,6 +183,22 @@ Turn off terminal integration sequences:
 semantic_prompts = false
 report_cwd = false
 ```
+
+### Resizing
+
+When the terminal window shrinks, terminals that reflow text (Ghostty, kitty,
+iTerm2, and others) wrap any prompt line wider than the new width. zsh then
+redraws the prompt assuming the old row count and leaves stale copies of the
+first line above it. This is a limitation of zsh with reflowing terminals and
+affects other prompts too; see
+[powerlevel10k's notes](https://github.com/romkatv/powerlevel10k#horrific-mess-when-resizing-terminal-window).
+
+The default layout keeps line 1 left-aligned only, so this happens only when
+line 1 is wider than the new width. A right block on line 1
+(`[layout.line1] right = [...]`) makes line 1 as wide as the terminal, so every
+shrink triggers it. To avoid it, leave `layout.line1.right` empty and put
+right-side segments in `layout.line2.right`, or turn off text reflow in your
+terminal if it has that setting.
 
 ## Performance
 

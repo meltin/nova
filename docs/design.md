@@ -375,9 +375,15 @@ only assigns them.
 - **First-line right prompt**: zsh's `RPROMPT` renders only on the prompt's
   last line. The right block of line 1 in a two-line layout therefore must be
   composed in Rust: `line1 = left + %{ESC[999C ESC[<width(right)>D%} + right`.
-  The terminal clamps `999C` to its current width, so the block stays
-  right-aligned even when zsh redraws the same string after a resize, and zsh
+  The terminal clamps `999C` to its current width, so the line zsh redraws
+  after a resize is right-aligned at the new width, and zsh
   counts the cursor move as zero width, so it never believes line 1 wrapped.
+  This does not protect against terminal reflow. The block is still written
+  up to the last columns, so a terminal that reflows text on shrink wraps the
+  already-drawn line 1. zsh then redraws the prompt assuming the old row count
+  and leaves stale rows above it. This is the zsh limitation documented by
+  powerlevel10k, and it is why the default layout keeps `time` in the input
+  line's `RPROMPT` instead.
   Like `RPROMPT`, the block leaves the last column empty. `nova prompt
   --format preview` expands the move into spaces for the requested `--cols`.
 - **Resize**: a `TRAPWINCH` (chaining any user-defined one) re-sends a render

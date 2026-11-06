@@ -6,6 +6,23 @@ All notable user-facing changes are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- The default `time` segment moved from `layout.line1.right` to
+  `layout.line2.right`, so it now renders as `RPROMPT` on the input line. A
+  first-line right block makes line 1 as wide as the terminal. When a terminal
+  that reflows text shrinks, that line wraps and zsh leaves stale copies of it
+  above the prompt. To keep the previous layout, set
+  `right = ["time"]` under `[layout.line1]` and `right = []` under
+  `[layout.line2]`.
+
+### Fixed
+
+- The 0.4.0 entry said the first-line right block stays right-aligned after a
+  pane split or window shrink. The redrawn prompt is aligned, but terminals
+  that reflow text still leave stale copies of the previous line 1 above it.
+  See the README for the limitation.
+
 ## [0.4.0] - 2026-10-31
 
 ### Added

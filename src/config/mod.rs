@@ -339,11 +339,12 @@ impl Default for LayoutConfig {
                     "aws".to_string(),
                     "duration".to_string(),
                 ],
-                right: vec!["time".to_string()],
+                right: Vec::new(),
             },
             line2: LineConfig {
                 left: vec!["exit_status".to_string(), "prompt_char".to_string()],
-                right: Vec::new(),
+                // Native RPROMPT: a full-width line 1 tears when a reflowing terminal shrinks.
+                right: vec!["time".to_string()],
             },
             transient: Vec::new(),
             style: PromptStyle::Plain,
@@ -406,8 +407,9 @@ mod tests {
                 "duration"
             ]
         );
-        assert_eq!(config.layout.line1.right, ["time"]);
+        assert!(config.layout.line1.right.is_empty());
         assert_eq!(config.layout.line2.left, ["exit_status", "prompt_char"]);
+        assert_eq!(config.layout.line2.right, ["time"]);
     }
 
     #[test]
