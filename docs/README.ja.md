@@ -22,8 +22,7 @@ worker が集め、届いた時点で prompt に反映します。prompt が表�
   worker は `.zshrc` の残りが実行されている間に現在の directory の情報を集め
   始めるので、最初の prompt も多くの場合は揃った状態で表示されます。
 - **Transient prompt（任意）。** 実行済みの行を directory と `❯` などに畳んで、
-  scrollback をすっきりさせられます。2 行 layout の右寄せ部分は、pane の分割や
-  window の resize をしても崩れません。
+  scrollback をすっきりさせられます。
 - **Custom segment。** 任意の command を数行の TOML で非同期 segment にできます。
 - **Terminal との連携。** OSC 133 の prompt mark（Ghostty、WezTerm、kitty、
   iTerm2、VS Code で prompt 間を移動できます）と、OSC 7 による directory の
@@ -187,6 +186,21 @@ terminal 連携の escape sequence を無効にする:
 semantic_prompts = false
 report_cwd = false
 ```
+
+### Window の resize
+
+window を狭めると、文字を reflow する terminal（Ghostty、kitty、iTerm2 など）は、
+新しい幅に収まらない prompt の行を折り返します。zsh は折り返し前の行数のまま
+prompt を描き直すので、1 行目の古いコピーが上に残ります。これは zsh と reflow
+する terminal の組み合わせによる制限で、他の prompt でも起きます。詳しくは
+[powerlevel10k の解説](https://github.com/romkatv/powerlevel10k#horrific-mess-when-resizing-terminal-window)を
+参照してください。
+
+デフォルトの layout では 1 行目が左寄せだけなので、起きるのは 1 行目より狭く
+したときだけです。1 行目に右寄せ部分（`[layout.line1] right = [...]`）を置くと
+1 行目が terminal の幅いっぱいになり、狭めるたびに起きます。避けるには
+`layout.line1.right` を空にして右側の segment を `layout.line2.right` に置くか、
+terminal に reflow を切る設定があれば無効にしてください。
 
 ## Performance
 
