@@ -93,7 +93,7 @@
         let
           nova = pkgs.rustPlatform.buildRustPackage {
             pname = "nova";
-            version = "0.4.0";
+            version = "0.5.0";
             src = ./.;
             cargoLock.lockFile = ./Cargo.lock;
             nativeCheckInputs = [
