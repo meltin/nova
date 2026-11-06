@@ -6,6 +6,8 @@ All notable user-facing changes are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-11-06
+
 ### Changed
 
 - The default `time` segment moved from `layout.line1.right` to
@@ -130,7 +132,8 @@ All notable user-facing changes are documented here. The format follows
   `ssh`, `user_host`, `prompt_char`, `nix_shell`, `aws`, and Rust, Node, Bun,
   Deno, and Python version segments.
 
-[Unreleased]: https://github.com/unmett/nova/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/unmett/nova/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/unmett/nova/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/unmett/nova/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/unmett/nova/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/unmett/nova/compare/v0.2.0...v0.3.0
