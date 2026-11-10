@@ -8,7 +8,10 @@ on:
 jobs:
   claude-review:
     # 83203852 は k.suzuki の GitHub ユーザー ID
-    if: github.event.pull_request.user.id == 83203852
+    # draft は ready for review にしたときに1回だけレビューする
+    if: >-
+      github.event.pull_request.user.id == 83203852
+      && !github.event.pull_request.draft
 
     runs-on: ubuntu-latest
     permissions:
